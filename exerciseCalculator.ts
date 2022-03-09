@@ -8,7 +8,7 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (
+export const calculateExercises = (
   exerciseDayList: number[],
   target: number
 ): Result => {
@@ -46,10 +46,3 @@ const calculateExercises = (
 
   return resultObject;
 };
-
-const target = Number(process.argv[2]);
-
-const slicedArgv = process.argv.slice(3, process.argv.length);
-const exerciseHours: number[] = slicedArgv.map((arg) => Number(arg));
-
-console.log(calculateExercises(exerciseHours, target));

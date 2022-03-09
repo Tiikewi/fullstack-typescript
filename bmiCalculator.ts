@@ -6,8 +6,3 @@ export const calculateBmi = (heigth: number, weight: number): string => {
   if (bmi <= 29.9) return "Overweight";
   else return "Obese";
 };
-
-const heigth = Number(process.argv[2]);
-const weight = Number(process.argv[3]);
-
-console.log(calculateBmi(heigth, weight));
