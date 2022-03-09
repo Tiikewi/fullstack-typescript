@@ -8,7 +8,10 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (exerciseDayList: number[], target: number): Result => {
+const calculateExercises = (
+  exerciseDayList: number[],
+  target: number
+): Result => {
   const periodLength = exerciseDayList.length;
   const trainingDays = exerciseDayList.filter((day) => day !== 0).length;
   const success = exerciseDayList.every((dailyHours) => {
@@ -44,9 +47,9 @@ const calculateExercises = (exerciseDayList: number[], target: number): Result =
   return resultObject;
 };
 
-const target: number = Number(process.argv[2]);
+const target = Number(process.argv[2]);
 
 const slicedArgv = process.argv.slice(3, process.argv.length);
-const exerciseHours: number[]  = slicedArgv.map(arg => Number(arg));
+const exerciseHours: number[] = slicedArgv.map((arg) => Number(arg));
 
-console.log(calculateExercises(exerciseHours, target)); 
+console.log(calculateExercises(exerciseHours, target));
